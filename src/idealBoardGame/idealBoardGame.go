@@ -13,7 +13,7 @@ func newBoardGame(numberOfPeople int) boardGame {
 func makePeople(numberOfPeople int) []int {
 	people := []int{}
 	for i := 1; i <= numberOfPeople; i++ {
-		people = append(people, numberOfPeople)
+		people = append(people, i)
 	}
 	return people
 }

@@ -32,3 +32,10 @@ func (b *boardGame) startRound() int {
 	b.people = peopleInNextRound
 	return len(b.people)
 }
+
+func (b *boardGame) findWinner() int {
+	for len(b.people) > 2 {
+		b.startRound()
+	}
+	return len(b.people)
+}

@@ -20,8 +20,12 @@ func makePeople(numberOfPeople int) []int {
 
 func (b *boardGame) startRound() int {
 	peopleInNextRound := []int{}
+	lastPeople := len(b.people) - 1
 	for index, people := range b.people {
 		if index%2 == 0 {
+			if index == lastPeople {
+				peopleInNextRound = peopleInNextRound[1:]
+			}
 			peopleInNextRound = append(peopleInNextRound, people)
 		}
 	}

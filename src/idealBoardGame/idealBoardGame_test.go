@@ -35,3 +35,20 @@ func Test_IdealBoardGame_Round_2(t *testing.T) {
 		t.Errorf("Expected : %v but it is %v", expectedPeople, actualPeople)
 	}
 }
+
+func Test_IdealBoardGame_Round_3(t *testing.T) {
+	expectedPeopleLeft := 12
+	expectedPeople := []int{9, 17, 25, 33, 41, 49, 57, 65, 73, 81, 89, 97}
+	game := newBoardGame(100)
+	game.startRound()
+	game.startRound()
+	actualPeopleLeft := game.startRound()
+	actualPeople := game.people
+
+	if expectedPeopleLeft != actualPeopleLeft {
+		t.Errorf("Expected : %d but it is %d", expectedPeopleLeft, actualPeopleLeft)
+	}
+	if reflect.DeepEqual(expectedPeople, actualPeople) != true {
+		t.Errorf("Expected : %v but it is %v", expectedPeople, actualPeople)
+	}
+}
